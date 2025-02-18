@@ -35,20 +35,11 @@
     <h1>В Kingdom Come: Deliverance 2 нашли персонажа, который является отсылкой к Джонни Сильверхенду</h1>
     <p>Игроки заметили интересную деталь в новой RPG Kingdom Come: Deliverance 2. Один из персонажей подозрительно похож на культового героя Cyberpunk 2077.</p>
     
-    <!-- Блок с reCAPTCHA -->
-    <div id="captcha-container">
-        <div class="g-recaptcha" data-sitekey="6LemW9sqAAAAAD_Pbpbz5im6zP-aPUKOrbokUmf0" data-callback="verifyCaptcha"></div>
-        <button id="submit-btn" class="hidden" onclick="redirect()">Читать далее на VGTimes</button>
-    </div>
+    <!-- Форма с reCAPTCHA -->
+    <form id="captcha-form" action="verify.php" method="POST">
+        <div class="g-recaptcha" data-sitekey="6LemW9sqAAAAAD_Pbpbz5im6zP-aPUKOrbokUmf0"></div>
+        <button type="submit">Читать далее на VGTimes</button>
+    </form>
 
-    <script>
-        function verifyCaptcha() {
-            document.getElementById('submit-btn').classList.remove('hidden');
-        }
-
-        function redirect() {
-            window.location.href = "https://vk.com/wall-161538595_266925";
-        }
-    </script>
 </body>
 </html>
