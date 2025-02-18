@@ -7,7 +7,10 @@
     <meta property="og:title" content="В Kingdom Come: Deliverance 2 нашли персонажа, который является отсылкой к Джонни Сильверхенду из Cyberpunk 2077">
     <meta property="og:description" content="Игроки заметили интересную деталь в новой RPG Kingdom Come: Deliverance 2. Оказывается, один из персонажей похож на культового героя Cyberpunk 2077.">
     <meta property="og:image" content="https://vgtimes.ru/uploads/posts/2024-02/1708171093_kingdom.jpg">
+
+    <!-- reCAPTCHA API -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,17 +32,31 @@
             margin-top: 20px;
         }
         .hidden { display: none; }
+        .error { color: red; margin-top: 10px; }
     </style>
 </head>
 <body>
     <h1>В Kingdom Come: Deliverance 2 нашли персонажа, который является отсылкой к Джонни Сильверхенду</h1>
     <p>Игроки заметили интересную деталь в новой RPG Kingdom Come: Deliverance 2. Один из персонажей подозрительно похож на культового героя Cyberpunk 2077.</p>
     
-    <!-- Форма с reCAPTCHA -->
-    <form id="captcha-form" action="verify.php" method="POST">
+    <!-- Блок с reCAPTCHA -->
+    <div id="captcha-container">
         <div class="g-recaptcha" data-sitekey="6LemW9sqAAAAAD_Pbpbz5im6zP-aPUKOrbokUmf0"></div>
-        <button type="submit">Читать далее на VGTimes</button>
-    </form>
+        <p id="error-message" class="error hidden">Пожалуйста, подтвердите, что вы не робот.</p>
+        <button id="submit-btn" onclick="checkCaptcha()">Читать далее на VGTimes</button>
+    </div>
 
+    <script>
+        function checkCaptcha() {
+            var response = grecaptcha.getResponse(); // Получаем ответ капчи
+            if (response.length === 0) {
+                // Если капча не пройдена
+                document.getElementById('error-message').classList.remove('hidden');
+            } else {
+                // Если капча пройдена — переходим на нужную страницу
+                window.location.href = "https://vk.com/wall-161538595_266925";
+            }
+        }
+    </script>
 </body>
 </html>
